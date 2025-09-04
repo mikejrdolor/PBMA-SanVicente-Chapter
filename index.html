@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBMA San Vicente Chapter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(90deg, #e63946, #457b9d);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    h1, h2 {
+      margin: 10px 0;
+    }
+    nav {
+      background: #222;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .donate-btn {
+      background: #e63946;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .donate-btn:hover {
+      background: #457b9d;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+      padding: 20px;
+      gap: 20px;
+    }
+    .sidebar {
+      width: 25%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+    .sidebar table td.urgent {
+      color: #e63946;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+    .content {
+      width: 75%;
+    }
+    .section {
+      padding: 20px;
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    /* Org chart styling */
+    .org-chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .org-level {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+      margin: 30px 0;
+    }
+    .org-box {
+      background: white;
+      border: 2px solid #457b9d;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      min-width: 150px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .org-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #457b9d;
+    }
+    .org-box h3 {
+      margin: 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .org-box p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+    .org-president { border-color: #e63946; }
+    .org-vice { border-color: #457b9d; }
+    .org-secretary { border-color: #2a9d8f; }
+    .org-treasurer { border-color: #f4a261; }
+    .org-member { border-color: #6c757d; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #457b9d;
+      color: white;
+    }
+    td:first-child::before { content: "📅 "; }
+    td:last-child::before { content: "📍 "; }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px;
+      margin-top: auto;
+    }
+    footer a.donate-btn {
+      display: inline-block;
+      margin-top: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background: #457b9d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #e63946;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>PBMA San Vicente Chapter</h1>
+    <p>Healing and Helping People</p>
+  </header>
+
+  <nav>
+    <a href="#org"></a>
+    <a href="#activities">Activities</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact Us</a>
+    <a href="donate.html">❤ Donate</a>
+  </nav>
+
+  <main>
+    <aside class="sidebar">
+      <h2>📢 Announcements</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Announcement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sept 04, 2025</td>
+            <td>General Assembly Meeting</td>
+          </tr>
+          <tr>
+            <td>No date yet</td>
+            <td class="urgent">Soon</td>
+          </tr>
+          <tr>
+            <td>No date yet</td>
+            <td class="urgent">Soon</td>
+          </tr>
+        </tbody>
+      </table>
+    </aside>
+
+    <div class="content">
+      <section id="org" class="section">
+        <h2>Organizational Chart</h2>
+        <div class="org-chart">
+          <div class="org-level">
+            <div class="org-box org-president">
+              <img src="https://via.placeholder.com/80" alt="President Photo">
+              <h3><i class="fas fa-user-tie"></i> President</h3>
+              <p>Arnel Abiada</p>
+            </div>
+          </div>
+          <div class="org-level">
+            <div class="org-box org-vice">
+              <img src="https://via.placeholder.com/80" alt="Vice President Photo">
+              <h3><i class="fas fa-users"></i> Vice President</h3>
+              <p>Rico "Kidoy" Herico</p>
+            </div>
+            <div class="org-box org-secretary">
+              <img src="https://via.placeholder.com/80" alt="Secretary Photo">
+              <h3><i class="fas fa-pen"></i> Secretary</h3>
+              <p>Jose Reyes</p>
+            </div>
+            <div class="org-box org-treasurer">
+              <img src="https://via.placeholder.com/80" alt="Treasurer Photo">
+              <h3><i class="fas fa-coins"></i> Treasurer</h3>
+              <p>Ana Lopez</p>
+            </div>
+          </div>
+          <div class="org-level">
+            <div class="org-box org-member">
+              <img src="https://via.placeholder.com/80" alt="Member Photo">
+              <h3><i class="fas fa-user"></i> Member</h3>
+              <p>Pedro Cruz</p>
+            </div>
+            <div class="org-box org-member">
+              <img src="https://via.placeholder.com/80" alt="Member Photo">
+              <h3><i class="fas fa-user"></i> Member</h3>
+              <p>Liza Dizon</p>
+            </div>
+            <div class="org-box org-member">
+              <img src="https://via.placeholder.com/80" alt="Member Photo">
+              <h3><i class="fas fa-user"></i> Member</h3>
+              <p>Carlos Mendoza</p>
+            </div>
+          </div>
+
+
+<div class="org-level">
+  <div class="org-box org-member">
+    <img src="https://via.placeholder.com/80" alt="Member Photo">
+    <h3><i class="fas fa-user"></i> Member</h3>
+    <p>Pedro Cruz</p>
+  </div>
+  <div class="org-box org-member">
+    <img src="https://via.placeholder.com/80" alt="Member Photo">
+    <h3><i class="fas fa-user"></i> Member</h3>
+    <p>Liza Dizon</p>
+  </div>
+  <div class="org-box org-member">
+    <img src="https://via.placeholder.com/80" alt="Member Photo">
+    <h3><i class="fas fa-user"></i> Member</h3>
+    <p>Carlos Mendoza</p>
+  </div>
+  <!-- ✅ New Member -->
+  <div class="org-box org-member">
+    <img src="https://via.placeholder.com/80" alt="Member Photo">
+    <h3><i class="fas fa-user"></i> Member</h3>
+    <p>Maria Santos</p>
+  </div>
+</div>
+
+
+
+        </div>
+      </section>
+
+      <section id="activities" class="section">
+        <h2>Group Activities & Schedule</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Activity</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>September 15, 2025</td>
+              <td>Community Healing Program</td>
+              <td>Barangay Hall</td>
+            </tr>
+            <tr>
+              <td>September 22, 2025</td>
+              <td>Feeding Program</td>
+              <td>San Vicente Plaza</td>
+            </tr>
+            <tr>
+              <td>October 5, 2025</td>
+              <td>Tree Planting Activity</td>
+              <td>Eco Park</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="events" class="section">
+        <h2>Upcoming Events</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Event</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>October 20, 2025</td>
+              <td>Medical Mission</td>
+              <td>Free check-ups and medicines for the community</td>
+            </tr>
+            <tr>
+              <td>November 10, 2025</td>
+              <td>Charity Fun Run</td>
+              <td>Fundraising for community projects</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/mvgqlywq" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="font-size:14px; color:gray; margin-top:10px;">
+    📩 Your message will be sent securely to our team.
+  </p>
+</section>
+
+
+  <footer>
+    <p>© 2025 PBMA San Vicente Chapter</p>
+    <a href="donate.html" target="_blank" class="donate-btn">❤ Donate</a>
+  </footer>
+</body>
+</html>
