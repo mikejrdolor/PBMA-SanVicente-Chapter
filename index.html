@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <  <!-- ✅ Mobile Friendly Setup -->
+    <!-- ✅ Mobile Friendly Setup -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>PBMA San Vicente Chapter</title>
@@ -243,30 +243,106 @@
 
   <main>
     <aside class="sidebar">
-      <h2>📢 Announcements</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Announcement</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sept 04, 2025</td>
-            <td>General Assembly Meeting</td>
-          </tr>
-          <tr>
-            <td>October 4, 2025</td>
-            <td class="urgent">Monthly Meeting</td>
-          </tr>
-          <tr>
-            <td>November 1, 2025</td>
-            <td class="urgent">Monthly Meeting</td>
-          </tr>
-        </tbody>
-      </table>
-    </aside>
+  <h2>📢 Announcements</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Announcement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sept 04, 2025</td>
+        <td>General Assembly Meeting</td>
+      </tr>
+      <tr>
+        <td>October 4, 2025</td>
+        <td class="urgent">Monthly Meeting</td>
+      </tr>
+      <tr>
+        <td>November 1, 2025</td>
+        <td class="urgent">Monthly Meeting</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ✅ Random Picture Table -->
+  <h2>🎞 Pictures</h2>
+  <table>
+    <tr>
+      <td><img src="https://shoestringdiary.wordpress.com/wp-content/uploads/2019/07/san_jose13shoestring.jpg?w=736?random=1" alt="Random" onclick="openLightbox(this)"></td>
+      <td><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeWozhOX0DcfCQTqZCf4PLVHv4MedvWEA9eYcVXAyR6u-Qc4z2BdDYGbqYd8yznb1VCCa-l-OZPXC-NzexYjtfM94qLH4VvuU_pZUimIt81-k2arjdWTG_9jkD7L8L_OhFB1UDPh91sCwgP_WHxpwgVQ9kXbRfi7BccskPWyklJt4u34yuAkNAvwuF/s1161/Dinagat-Shrine.png?random=2" alt="Random" onclick="openLightbox(this)"></td>
+    </tr>
+    <tr>
+      <td><img src="https://live.staticflickr.com/65535/50393162481_4a5aac42ec_o.jpg?random=3" alt="Random" onclick="openLightbox(this)"></td>
+      <td><img src="https://www.shutterstock.com/image-photo/pbma-divine-masters-shrine-aurelio-260nw-2361548915.jpg?random=4" alt="Random" onclick="openLightbox(this)"></td>
+    </tr>
+  </table>
+</aside>
+
+<!-- ✅ Lightbox Overlay -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<style>
+  /* ✅ Image hover zoom */
+  .sidebar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .sidebar img:hover {
+    transform: scale(1.8);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ✅ Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+  }
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+    border-radius: 10px;
+  }
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function openLightbox(img) {
+    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightbox-img").src = img.src;
+  }
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+
 
     <div class="content">
       <section id="org" class="section">
