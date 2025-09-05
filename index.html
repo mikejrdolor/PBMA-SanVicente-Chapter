@@ -17,15 +17,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    header {
-      background: linear-gradient(90deg, #e63946, #457b9d);
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    h1, h2 {
-      margin: 10px 0;
-    }
+    
     nav {
       background: #222;
       color: white;
@@ -221,17 +213,73 @@
 }
 
 
+header {
+  background: linear-gradient(90deg, #e63946, #457b9d);
+  padding: 40px;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.header-text h1 {
+  margin: 10px 0;
+  font-size: 40px;
+  
+}
+
+.header-text p {
+  margin: 50;
+  font-style: italic;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 350px;
+    height: 350px;
+  }
+}
+
 
 
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>PBMA San Isidro Talisay Chapter</h1>
-    <h1>Man-Ogob, San Vicente Camarines Norte</h1>
-    <p>Healing and Helping People</p>
-  </header>
+  
+
+<header>
+  <div class="header-container">
+    <img src="px/logo.png" alt="PBMA Logo" class="logo">
+    <div class="header-text">
+      <h1>PBMA San Isidro Talisay Chapter</h1>
+      <h1>Man-Ogob, San Vicente Camarines Norte</h1>
+      <p>Healing and Helping People</p>
+    </div>
+  </div>
+</header>
+
+
+
 
   <nav>
     <a href="#org"></a>
@@ -528,7 +576,7 @@
 
 
   <footer>
-    <p>© 2025 PBMA San Vicente Chapter</p>
+    <p>© 2025 PBMA San Vicente Chapter @ Created & Design By: Michael Dolor</p>
     <a href="donate.html" target="_blank" class="donate-btn">❤ Donate</a>
   </footer>
 </body>
