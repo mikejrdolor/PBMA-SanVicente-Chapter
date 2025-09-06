@@ -259,6 +259,31 @@ header {
   }
 }
 
+.download-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.download-btn {
+  display: block;
+  text-align: center;
+  background: #457b9d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.download-btn:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+
 
 
   </style>
@@ -326,8 +351,26 @@ header {
       <td><img src="https://live.staticflickr.com/65535/50393162481_4a5aac42ec_o.jpg?random=3" alt="Random" onclick="openLightbox(this)"></td>
       <td><img src="https://www.shutterstock.com/image-photo/pbma-divine-masters-shrine-aurelio-260nw-2361548915.jpg?random=4" alt="Random" onclick="openLightbox(this)"></td>
     </tr>
+
   </table>
+
+
+
+<h2>📥 Forms</h2>
+<div class="download-section">
+  <a href="forms/Sulat Pagbabalik Loob.docx" download class="download-btn">📝 Sulat Pag babalik Loob</a>
+  <a href="forms/Letter Of Intent.docx" download class="download-btn">📝 Letter of Intent</a>
+
+  <!-- <a href="forms/Sulat Pagbabalik Loob.xlsx" download class="download-btn">📊 Sulat Pag babalik Loob</a>
+  <a href="files/sample1.pdf" download class="download-btn">📄 Download PDF</a>
+  
+  <a href="files/sample4.jpg" download class="download-btn">🖼 Download Image</a> -->
+</div>
+
 </aside>
+
+
+
 
 <!-- ✅ Lightbox Overlay -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -390,7 +433,7 @@ header {
   border: 2px solid #457b9d;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  padding: 20px;
+  padding: 30px;
   width: 280px;
   z-index: 9999;
   animation: slideIn 1s ease;
@@ -700,6 +743,9 @@ header {
     📩 Your message will be sent securely to our team.
   </p>
 </section>
+
+
+
 
 
 
