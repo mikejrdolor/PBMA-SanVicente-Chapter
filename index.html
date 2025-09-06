@@ -378,6 +378,72 @@ header {
     color: white;
     cursor: pointer;
   }
+
+
+
+/* Floating Welcome Popup */
+#welcome-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 2px solid #457b9d;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 280px;
+  z-index: 9999;
+  animation: slideIn 1s ease;
+}
+
+.welcome-content {
+  position: relative;
+  text-align: center;
+}
+
+.welcome-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e63946;
+}
+
+.welcome-content p {
+  font-size: 14px;
+  color: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #457b9d;
+}
+
+.close-btn:hover {
+  color: #e63946;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 📱 Mobile Friendly */
+@media (max-width: 768px) {
+  #welcome-popup {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+  }
+}
+
+
+
+
+
+
 </style>
 
 <script>
@@ -389,6 +455,16 @@ header {
     document.getElementById("lightbox").style.display = "none";
   }
 </script>
+
+
+
+
+<script>
+  setTimeout(() => {
+    document.getElementById('welcome-popup').style.display = 'none';
+  }, 10000); // 10 seconds
+</script>
+
 
 
 
@@ -624,6 +700,18 @@ header {
     📩 Your message will be sent securely to our team.
   </p>
 </section>
+
+
+
+
+<div id="welcome-popup">
+  <div class="welcome-content">
+    <span class="close-btn" onclick="document.getElementById('welcome-popup').style.display='none'">&times;</span>
+    <h2>👋 Welcome to PBMA San Vicente Chapter</h2>
+    <p>We’re glad to have you here! 💙 Healing and Helping People Together.</p>
+  </div>
+</div>
+
 
 
   <footer>
