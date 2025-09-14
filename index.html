@@ -529,14 +529,24 @@ Man-Ogob, San Vicente Camarines Norte</h2>
       <input id="newPass" placeholder="New Password">
       <button class="btn" onclick="addUser()">Add User</button>
       <table id="userTable"></table>
+  <h3>Change Admin Password</h3>
+  <input type="password" id="oldAdminPass" placeholder="Old Password">
+  <input type="password" id="newAdminPass" placeholder="New Password">
+  <button onclick="changeAdminPassword()">Update Password</button>
       <h3>Activity Log</h3>
       <button class="btn secondary" onclick="clearLogs()">Clear Logs</button>
       <div id="logBox" class="log-box"></div>
+  
+  
+
+
     </div>
 
+
+
     <div id="main-content" class="card">
-      <h2>User Dashboard</h2>
-      <p>Welcome, user!</p>
+      <h2>PBMA Dashboard</h2>
+      <p>Welcome, Member!</p>
 
 <style>
     :root{--bg:#f6f8fb;--card:#fff;--accent:#0b74de;--muted:#666;--border:#d9e2ec}
@@ -567,7 +577,7 @@ Man-Ogob, San Vicente Camarines Norte</h2>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Download Button — HTML examples</h1>
+      <h1>Welcome to PBMA Dashboard</h1>
       
 
       
@@ -647,12 +657,6 @@ Man-Ogob, San Vicente Camarines Norte</h2>
           </td>
           <td>Message Red Ring.</td>
       
-
-
-
-
-
-
       </table>
 
 
@@ -814,7 +818,27 @@ Man-Ogob, San Vicente Camarines Norte</h2>
         renderUsers();
       }
     }
-  </script>
+
+    // ✅ Change Admin Password
+    function changeAdminPassword(){
+      const oldPass = document.getElementById("oldAdminPass").value;
+      const newPass = document.getElementById("newAdminPass").value;
+
+      const admin = users.find(u => u.username === "admin");
+
+      if(admin && admin.password === oldPass){
+        admin.password = newPass;
+        localStorage.setItem("users", JSON.stringify(users));
+        addLog("Admin changed their password");
+        alert("Admin password updated successfully!");
+        document.getElementById("oldAdminPass").value = "";
+        document.getElementById("newAdminPass").value = "";
+      }else{
+        alert("Old password is incorrect!");
+      }
+    }
+</script>
+
 
 
 
