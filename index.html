@@ -6,288 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>PBMA San Vicente Chapter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    
-    nav {
-      background: #222;
-      color: white;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .donate-btn {
-      background: #e63946;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .donate-btn:hover {
-      background: #457b9d;
-    }
-    main {
-      display: flex;
-      flex: 1;
-      max-width: 1200px;
-      margin: auto;
-      width: 100%;
-      padding: 20px;
-      gap: 20px;
-    }
-    .sidebar {
-      width: 25%;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      height: fit-content;
-    }
-    .sidebar table td.urgent {
-      color: #e63946;
-      font-weight: bold;
-      animation: blink 1.5s infinite;
-    }
-    @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
-    }
-    .content {
-      width: 75%;
-    }
-    .section {
-      padding: 20px;
-      margin-bottom: 30px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    /* Org chart styling */
-    .org-chart {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .org-level {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-      position: relative;
-      margin: 30px 0;
-    }
-    .org-box {
-      background: white;
-      border: 2px solid #457b9d;
-      border-radius: 10px;
-      padding: 15px 20px;
-      text-align: center;
-      min-width: 150px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: relative;
-    }
-    .org-box img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border: 3px solid #457b9d;
-    }
-    .org-box h3 {
-      margin: 0;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .org-box p {
-      margin: 5px 0 0;
-      font-size: 14px;
-    }
-    .org-president { border-color: #e63946; }
-    .org-vice { border-color: #457b9d; }
-    .org-secretary { border-color: #2a9d8f; }
-    .org-treasurer { border-color: #f4a261; }
-    .org-member { border-color: #6c757d; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background: #457b9d;
-      color: white;
-    }
-    td:first-child::before { content: "📅 "; }
-    td:last-child::before { content: "📍 "; }
-
-    footer {
-      text-align: center;
-      background: #222;
-      color: white;
-      padding: 20px;
-      margin-top: auto;
-    }
-    footer a.donate-btn {
-      display: inline-block;
-      margin-top: 10px;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    form button {
-      background: #457b9d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #e63946;
-    }
-
-
-/* 📱 Mobile Responsive */
-@media (max-width: 768px) {
-  main {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar, .content {
-    width: 100%;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .org-level {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .org-box {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  table {
-    font-size: 12px;
-    overflow-x: auto;
-    display: block;
-  }
-}
-
-
-header {
-  background: linear-gradient(90deg, #e63946, #457b9d);
-  padding: 40px;
-  color: white;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-  text-align: center;
-}
-
-.logo {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-
-.header-text h1 {
-  margin: 10px 0;
-  font-size: 40px;
   
-}
-
-.header-text p {
-  margin: 50;
-  font-style: italic;
-}
-
-/* 📱 Mobile */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo {
-    width: 350px;
-    height: 350px;
-  }
-}
-
-.download-section {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.download-btn {
-  display: block;
-  text-align: center;
-  background: #457b9d;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s;
-}
-
-.download-btn:hover {
-  background: #e63946;
-  transform: scale(1.05);
-}
-
-
-
-
-  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   
@@ -354,9 +76,9 @@ header {
 
   </table>
 
+  
 
-
-<h2>📥 Forms</h2>
+<!-- <h2>📥 Forms</h2>
 <div class="download-section">
   <a href="forms/Sulat Pagbabalik Loob.docx" download class="download-btn">📝 Sulat Pag babalik Loob</a>
   <a href="forms/Letter Of Intent.docx" download class="download-btn">📝 Letter of Intent</a>
@@ -365,11 +87,11 @@ header {
   <a href="files/sample1.pdf" download class="download-btn">📄 Download PDF</a>
   
   <a href="files/sample4.jpg" download class="download-btn">🖼 Download Image</a> -->
-</div>
+
+
+</div> 
 
 </aside>
-
-
 
 
 <!-- ✅ Lightbox Overlay -->
@@ -485,8 +207,6 @@ header {
 
 
 
-
-
 </style>
 
 <script>
@@ -507,7 +227,6 @@ header {
     document.getElementById('welcome-popup').style.display = 'none';
   }, 10000); // 10 seconds
 </script>
-
 
 
 
@@ -731,6 +450,11 @@ header {
         </table>
       </section>
 
+
+
+
+
+
       <section id="contact" class="section">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/mvgqlywq" method="POST">
@@ -748,16 +472,350 @@ header {
 
 
 
-
-
 <div id="welcome-popup">
   <div class="welcome-content">
     <span class="close-btn" onclick="document.getElementById('welcome-popup').style.display='none'">&times;</span>
     <h2>👋 Welcome to PBMA San Isidro Talisay Chapter
 Man-Ogob, San Vicente Camarines Norte</h2>
     <p>We’re glad to have you here! 💙 Healing and Helping People Together.</p>
+
+
   </div>
 </div>
+
+
+
+<style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#0b74de;--muted:#666;--border:#d9e2ec}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:880px;margin:48px auto;padding:24px}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(20,30,50,0.06)}
+    h1{margin:0 0 8px;font-size:20px}
+    p{margin:0 0 16px;color:var(--muted)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s ease}
+    .btn:hover{background:#095eb5}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,116,222,0.25)}
+    .btn.secondary:hover{background:rgba(11,116,222,0.05)}
+    table{border-collapse:separate;border-spacing:0;width:100%;margin:16px 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+    th,td{padding:14px 16px;text-align:center;border-bottom:1px solid var(--border)}
+    th{background:#f0f5fb;color:#333;font-weight:600}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#f9fbff}
+    tr:nth-child(even) td{background:#fafcff}
+    img.table-img{max-width:120px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.3s ease}
+    img.table-img:hover{transform:scale(2);z-index:10;position:relative}
+    .img-link img{max-width:180px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s ease}
+    .img-link img:hover{transform:scale(1.05)}
+    #login-container,#admin-panel,#main-content{display:none}
+    .log-box{background:#fff;padding:12px;border-radius:8px;max-height:200px;overflow-y:auto;font-size:13px;border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="login-container" class="card" style="display:flex;flex-direction:column;gap:10px;max-width:300px;margin:auto;">
+      <h2>Login</h2>
+      <input id="username" placeholder="Username">
+      <input id="password" placeholder="Password" type="password">
+      <button class="btn" onclick="login()">Login</button>
+      <div id="error-msg" style="color:red;font-size:13px;"></div>
+    </div>
+
+    <div id="admin-panel" class="card">
+      <h2>Admin Panel</h2>
+      <button class="btn secondary" onclick="logout()">Logout</button>
+      <h3>User Management</h3>
+      <input id="newUser" placeholder="New Username">
+      <input id="newPass" placeholder="New Password">
+      <button class="btn" onclick="addUser()">Add User</button>
+      <table id="userTable"></table>
+      <h3>Activity Log</h3>
+      <button class="btn secondary" onclick="clearLogs()">Clear Logs</button>
+      <div id="logBox" class="log-box"></div>
+    </div>
+
+    <div id="main-content" class="card">
+      <h2>User Dashboard</h2>
+      <p>Welcome, user!</p>
+
+<style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#0b74de;--muted:#666;--border:#d9e2ec}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:880px;margin:48px auto;padding:24px}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(20,30,50,0.06)}
+    h1{margin:0 0 8px;font-size:20px}
+    p{margin:0 0 16px;color:var(--muted)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s ease}
+    .btn:hover{background:#095eb5}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,116,222,0.25)}
+    .btn.secondary:hover{background:rgba(11,116,222,0.05)}
+    table{border-collapse:separate;border-spacing:0;width:100%;margin:16px 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+    th,td{padding:14px 16px;text-align:center;border-bottom:1px solid var(--border)}
+    th{background:#f0f5fb;color:#333;font-weight:600}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#f9fbff}
+    tr:nth-child(even) td{background:#fafcff}
+    img.table-img{max-width:120px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.3s ease}
+    img.table-img:hover{transform:scale(2);z-index:10;position:relative}
+    .img-link img{max-width:180px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s ease}
+    .img-link img:hover{transform:scale(1.05)}
+    code{background:#f3f6fb;padding:4px 6px;border-radius:6px;font-family:monospace}
+    .note{margin-top:14px;color:#444;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Download Button — HTML examples</h1>
+      
+
+      
+      <table>
+        <tr>
+          <th>File Name</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>Letter Of Intent</td>
+          <td><a class="btn" href="forms/Letter Of Intent.pdf" download>Letter Of Intent</a></td>
+        </tr>
+
+       <tr>
+          <td>Sulat Pagbabalik Loob</td>
+          <td><a class="btn" href="forms/Sulat Pagbabalik Loob.pdf" download>Sulat Pagbabalik Loob</a></td>
+        </tr>
+
+
+       
+
+      <table>
+        <tr>
+          <th>Preview</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="img/JESBRUSARAM.JPG" download>
+              <img class="table-img" src="img/JESBRUSARAM.JPG" alt="Preview Image">
+            </a>
+            <div style="margin-top:8px;">
+            <a class="btn secondary" href="img/JESBRUSARAM.JPG" download>⬇️ Download Image</a> 
+            </div>
+          </td>
+          <td>JESBRUSARAM.</td>
+      
+         <tr>
+          <td>
+            <a href="img/F105.JPG" download>
+              <img class="table-img" src="img/F105.JPG" alt="Preview Image">
+            </a>
+            <div style="margin-top:8px;">
+            <a class="btn secondary" href="img/F105.JPG" download>⬇️ Download Image</a> 
+            </div>
+          </td>
+          <td>F105.</td>
+      
+         <tr>
+          <td>
+            <a href="img/sdmc1.JPG" download>
+              <img class="table-img" src="img/sdmc1.JPG" alt="Preview Image">
+              <img class="table-img" src="img/sdmc2.JPG" alt="Preview Image">
+              <img class="table-img" src="img/sdmc3.JPG" alt="Preview Image">
+            </a>
+            <div style="margin-top:8px;">
+            <a class="btn secondary" href="img/sdmc1.JPG" download>⬇️ Download Image</a> 
+            <a class="btn secondary" href="img/sdmc2.JPG" download>⬇️ Download Image</a> 
+            <a class="btn secondary" href="img/sdmc3.JPG" download>⬇️ Download Image</a> 
+            </div>
+          </td>
+          <td>SDMC.</td>
+
+
+         <tr>
+          <td>
+            <a href="img/mensahe1.JPG" download>
+              <img class="table-img" src="img/mensahe1.JPG" alt="Preview Image">
+              <img class="table-img" src="img/mensahe2.JPG" alt="Preview Image">
+
+            </a>
+            <div style="margin-top:8px;">
+            <a class="btn secondary" href="img/mensahe1.JPG" download>⬇️ Download Image</a> 
+            <a class="btn secondary" href="img/mensahe2.JPG" download>⬇️ Download Image</a> 
+            </div>
+          </td>
+          <td>Message Red Ring.</td>
+      
+
+
+
+
+
+
+      </table>
+
+
+
+    </div>
+  </div>
+
+  <script>
+    function downloadBlob(content, filename, mimeType) {
+      const blob = new Blob([content], { type: mimeType || 'application/octet-stream' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename || 'download.bin';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById('makeTxt').addEventListener('click', () => {
+      const sample = `Hello!\nThis is a sample text file created on ${new Date().toLocaleString()}.`;
+      downloadBlob(sample, 'example-notes.txt', 'text/plain');
+    });
+
+    document.getElementById('makeCsv').addEventListener('click', () => {
+      const rows = [
+        ['Name','Email','Score'],
+        ['Ana','ana@example.com','88'],
+        ['Ben','ben@example.com','92']
+      ];
+      const csv = rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g,'""') + '"').join(',')).join('\n');
+      downloadBlob(csv, 'export.csv', 'text/csv');
+    });
+
+    document.getElementById('tableTxt').addEventListener('click', () => {
+      const sample = `This is a text file triggered from a table button.`;
+      downloadBlob(sample, 'table-text.txt', 'text/plain');
+    });
+  </script>
+
+
+
+
+
+
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    // Users with admin
+    let users = JSON.parse(localStorage.getItem("users")) || [
+      { username: "admin", password: "1234" }
+    ];
+
+    let logs = JSON.parse(localStorage.getItem("logs")) || [];
+
+    function addLog(action){
+      const entry = `${new Date().toLocaleString()} - ${action}`;
+      logs.unshift(entry);
+      localStorage.setItem("logs", JSON.stringify(logs));
+      renderLogs();
+    }
+
+    function renderLogs(){
+      const logBox = document.getElementById("logBox");
+      if(!logBox) return;
+      logBox.innerHTML = logs.map(l => `<div>${l}</div>`).join("");
+    }
+
+    function clearLogs(){
+      if(confirm("Are you sure you want to clear all logs?")){
+        logs = [];
+        localStorage.setItem("logs", JSON.stringify(logs));
+        renderLogs();
+        addLog("Admin cleared all logs");
+      }
+    }
+
+    function login(){
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-msg");
+      const found = users.find(u => u.username === user && u.password === pass);
+
+      if(found){
+        document.getElementById("login-container").style.display = "none";
+        if(user === "admin"){
+          document.getElementById("admin-panel").style.display = "block";
+          renderUsers();
+          renderLogs();
+        }else{
+          document.getElementById("main-content").style.display = "block";
+        }
+        addLog(`${user} logged in`);
+      }else{
+        errorMsg.textContent = "Invalid username or password!";
+      }
+    }
+
+    function logout(){
+      document.getElementById("login-container").style.display = "flex";
+      document.getElementById("admin-panel").style.display = "none";
+      document.getElementById("main-content").style.display = "none";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      addLog("User logged out");
+    }
+
+    function addUser(){
+      const newUser = document.getElementById("newUser").value;
+      const newPass = document.getElementById("newPass").value;
+      if(newUser && newPass){
+        users.push({ username:newUser,password:newPass });
+        localStorage.setItem("users", JSON.stringify(users));
+        renderUsers();
+        addLog(`Admin added user '${newUser}'`);
+        document.getElementById("newUser").value = "";
+        document.getElementById("newPass").value = "";
+      }
+    }
+
+    function renderUsers(){
+      const table = document.getElementById("userTable");
+      table.innerHTML = "<tr><th>Username</th><th>Password</th><th>Actions</th></tr>";
+      users.forEach((u,index)=>{
+        if(u.username!=="admin"){
+          table.innerHTML += `
+            <tr>
+              <td>${u.username}</td>
+              <td>${u.password}</td>
+              <td>
+                <button class="btn secondary" onclick="editUser(${index})">Edit</button>
+                <button class="btn" onclick="deleteUser(${index})">Delete</button>
+              </td>
+            </tr>`;
+        }
+      });
+    }
+
+    function editUser(index){
+      const newName = prompt("Enter new username:", users[index].username);
+      const newPass = prompt("Enter new password:", users[index].password);
+      if(newName && newPass){
+        addLog(`Admin edited user '${users[index].username}' to '${newName}'`);
+        users[index].username=newName;
+        users[index].password=newPass;
+        localStorage.setItem("users", JSON.stringify(users));
+        renderUsers();
+      }
+    }
+
+    function deleteUser(index){
+      if(confirm("Are you sure to delete this user?")){
+        addLog(`Admin deleted user '${users[index].username}'`);
+        users.splice(index,1);
+        localStorage.setItem("users", JSON.stringify(users));
+        renderUsers();
+      }
+    }
+  </script>
+
 
 
 
@@ -767,4 +825,3 @@ Man-Ogob, San Vicente Camarines Norte</h2>
   </footer>
 </body>
 </html>
-
