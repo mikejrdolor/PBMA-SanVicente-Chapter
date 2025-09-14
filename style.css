@@ -1,0 +1,391 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    nav {
+      background: #222;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .donate-btn {
+      background: #e63946;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .donate-btn:hover {
+      background: #457b9d;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+      padding: 20px;
+      gap: 20px;
+    }
+    .sidebar {
+      width: 25%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+    .sidebar table td.urgent {
+      color: #e63946;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+    .content {
+      width: 75%;
+    }
+    .section {
+      padding: 20px;
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    /* Org chart styling */
+    .org-chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .org-level {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+      margin: 30px 0;
+    }
+    .org-box {
+      background: white;
+      border: 2px solid #457b9d;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+      min-width: 150px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .org-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #457b9d;
+    }
+    .org-box h3 {
+      margin: 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .org-box p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+    .org-president { border-color: #e63946; }
+    .org-vice { border-color: #457b9d; }
+    .org-secretary { border-color: #2a9d8f; }
+    .org-treasurer { border-color: #f4a261; }
+    .org-member { border-color: #6c757d; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #457b9d;
+      color: white;
+    }
+    td:first-child::before { content: "📅 "; }
+    td:last-child::before { content: "📍 "; }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px;
+      margin-top: auto;
+    }
+    footer a.donate-btn {
+      display: inline-block;
+      margin-top: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background: #457b9d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #e63946;
+    }
+
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar, .content {
+    width: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .org-level {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org-box {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+
+header {
+  background: linear-gradient(90deg, #e63946, #457b9d);
+  padding: 40px;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.header-text h1 {
+  margin: 10px 0;
+  font-size: 40px;
+  
+}
+
+.header-text p {
+  margin: 50;
+  font-style: italic;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+.download-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.download-btn {
+  display: block;
+  text-align: center;
+  background: #457b9d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.download-btn:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+  /* ✅ Image hover zoom */
+  .sidebar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .sidebar img:hover {
+    transform: scale(1.8);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ✅ Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+  }
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+    border-radius: 10px;
+  }
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+/* Floating Welcome Popup */
+#welcome-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 2px solid #457b9d;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 30px;
+  width: 280px;
+  z-index: 9999;
+  animation: slideIn 1s ease;
+}
+
+.welcome-content {
+  position: relative;
+  text-align: center;
+}
+
+.welcome-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e63946;
+}
+
+.welcome-content p {
+  font-size: 14px;
+  color: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #457b9d;
+}
+
+.close-btn:hover {
+  color: #e63946;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 📱 Mobile Friendly */
+@media (max-width: 768px) {
+  #welcome-popup {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+  }
+}
+
+
+
+
+
+
+
+   
